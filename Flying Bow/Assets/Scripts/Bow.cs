@@ -8,12 +8,22 @@ public class Bow : MonoBehaviour
     [SerializeField] private Vector3 _forceApplied;
     [SerializeField] private Vector3 _angularForceApplied;
     [SerializeField] private StringAnimation _stringAnimation;
+    [SerializeField] private Arrow _arrow;
 
     private Rigidbody _bowBody;
 
     private void Start()
     {
         _bowBody = GetComponent<Rigidbody>();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.TryGetComponent<Arrow>(out Arrow arrow))
+        {
+            arrow.ColliderOff();
+            Instantiate(_arrow, transform);
+        }
     }
 
     public void Flying()

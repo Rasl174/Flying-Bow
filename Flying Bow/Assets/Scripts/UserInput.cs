@@ -6,9 +6,9 @@ public class UserInput : MonoBehaviour
 {
     [SerializeField] private Bow _bow;
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _bow.Flying();
         }
