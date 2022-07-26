@@ -12,14 +12,13 @@ public class Bonus : MonoBehaviour
     {
         if(bonus.TryGetComponent<Bow>(out Bow bow))
         {
-            Debug.Log("Cdcdc");
             bow.gameObject.SetActive(false);
             _bow.gameObject.SetActive(true);
             _bow.gameObject.transform.position = bow.transform.position;
             _camera.AddNewTarget(_bow.transform);
             _userInput.AddNewBow(_bow);
             _bow.GetBody(_bow);
+            gameObject.SetActive(false);
         }
-        gameObject.SetActive(false);
     }
 }

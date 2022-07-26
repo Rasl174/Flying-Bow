@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    [SerializeField] private float _arrowSpeed;
     [SerializeField] private BoxCollider _trigger;
+    [SerializeField] private Bow _bow;
+    [SerializeField] private float _arrowSpeed;
 
-    private Rigidbody _arrowBody;
+    private Rigidbody _body;
 
     private void Start()
     {
-        _arrowBody = GetComponent<Rigidbody>();
-        _arrowBody.isKinematic = true;
+        _body = gameObject.GetComponent<Rigidbody>();
+        _body.isKinematic = true;
     }
 
     private void Update()
@@ -23,13 +24,13 @@ public class Arrow : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    private void Shoot()
     {
-        _arrowBody.isKinematic = false;
-        _arrowBody.velocity = transform.up * _arrowSpeed;
+        _body.isKinematic = false;
+        _body.velocity = transform.up * _arrowSpeed;
     }
 
-    public void ColliderOff()
+    public void OffTrigger()
     {
         _trigger.enabled = false;
     }

@@ -139,5 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8655bf05ce9a94e8674844592c7fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrowSpeed: 3
   _trigger: {fileID: 3808278801879654858}
+  _bow: {fileID: 3149967202297106764, guid: cdfd8bbdf177348438358f31121816b4, type: 3}
+  _arrowSpeed: 8
