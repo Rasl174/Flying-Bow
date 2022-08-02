@@ -112,7 +112,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 114
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &3808278801879654858
 BoxCollider:
@@ -140,5 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 3808278801879654858}
+  _tip: {fileID: 3808278801879654903}
   _bow: {fileID: 3149967202297106764, guid: cdfd8bbdf177348438358f31121816b4, type: 3}
   _arrowSpeed: 8

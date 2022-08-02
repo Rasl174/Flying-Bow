@@ -66,7 +66,7 @@ MonoBehaviour:
   _forceApplied: {x: 0, y: 2, z: 1}
   _angularForceApplied: {x: 4, y: 0, z: 0}
   _stringAnimation: {fileID: 8357366068764892330}
-  _spawner: {fileID: 0}
+  _spawner: {fileID: 8066495472634222035}
 --- !u!65 &5958114358134939181
 BoxCollider:
   m_ObjectHideFlags: 0

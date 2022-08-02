@@ -8,10 +8,8 @@ public class Bow : MonoBehaviour
     [SerializeField] private Vector3 _forceApplied;
     [SerializeField] private Vector3 _angularForceApplied;
     [SerializeField] private StringAnimation _stringAnimation;
-    //[SerializeField] private float _arrowSpeed;
     [SerializeField] private Spawner _spawner;
 
-    private Rigidbody _arrowBody;
     private Rigidbody _bowBody;
 
     private void Start()
@@ -39,21 +37,6 @@ public class Bow : MonoBehaviour
     {
         _bowBody = bow.GetComponent<Rigidbody>();
     }
-
-    //public void Shoot()
-    //{
-    //    Debug.Log(_arrowBody);
-
-    //    _arrowBody.isKinematic = false;
-    //    _arrowBody.velocity = -transform.right * _arrowSpeed;
-    //}
-
-    //public void GetArrowBody(Rigidbody arrowBody)
-    //{
-    //    _arrowBody = arrowBody;
-    //    _arrowBody.isKinematic = true;
-    //    Debug.Log(_arrowBody);
-    //}
 
     private IEnumerator Waiter()
     {

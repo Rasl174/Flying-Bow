@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 4513442692416383392}
+  _tip: {fileID: 1941704693980875984}
   _bow: {fileID: 5958114358134939155, guid: 17a14c49e5ff2ee48bd71f2666f49137, type: 3}
   _arrowSpeed: 8
 --- !u!54 &5414874749921069481

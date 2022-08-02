@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     [SerializeField] private BoxCollider _trigger;
+    [SerializeField] private BoxCollider _tip;
     [SerializeField] private Bow _bow;
     [SerializeField] private float _arrowSpeed;
 
@@ -12,6 +13,7 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
+        _tip.enabled = false;
         _body = gameObject.GetComponent<Rigidbody>();
         _body.isKinematic = true;
     }
@@ -21,6 +23,7 @@ public class Arrow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+            _tip.enabled = true;
         }
     }
 
