@@ -12,6 +12,7 @@ public class Apple : MonoBehaviour
     {
         _body = GetComponent<Rigidbody>();
         _body.Sleep();
+        _body.isKinematic = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +20,7 @@ public class Apple : MonoBehaviour
         if (other.TryGetComponent<Arrow>(out Arrow arrow))
         {
             _body.WakeUp();
+            _body.isKinematic = false;
             _body.velocity = _velocityForce;
         }
     }
