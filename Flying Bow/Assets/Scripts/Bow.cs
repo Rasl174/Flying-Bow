@@ -36,6 +36,7 @@ public class Bow : MonoBehaviour
     public void GetBody(Bow bow)
     {
         _bowBody = bow.GetComponent<Rigidbody>();
+        Flying();
     }
 
     private IEnumerator Waiter()
