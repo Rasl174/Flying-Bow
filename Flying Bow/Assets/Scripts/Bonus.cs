@@ -12,9 +12,10 @@ public class Bonus : MonoBehaviour
     {
         if(bonus.TryGetComponent<Bow>(out Bow bow))
         {
+            _bow.gameObject.transform.position = bow.transform.position;
+            _bow.transform.rotation = bow.transform.rotation;
             bow.gameObject.SetActive(false);
             _bow.gameObject.SetActive(true);
-            _bow.gameObject.transform.position = bow.transform.position;
             _camera.AddNewTarget(_bow.transform);
             _userInput.AddNewBow(_bow);
             _bow.GetBody(_bow);

@@ -9,6 +9,8 @@ public class Bow : MonoBehaviour
     [SerializeField] private Vector3 _angularForceApplied;
     [SerializeField] private StringAnimation _stringAnimation;
     [SerializeField] private Spawner _spawner;
+    [SerializeField] private float _taimerWait;
+    [SerializeField] private int _cicleCount;
 
     private Rigidbody _bowBody;
 
@@ -26,22 +28,33 @@ public class Bow : MonoBehaviour
         }
     }
 
+    private IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _spawner.Spawn();
+    }
+
+    private IEnumerator StracherVelocity()
+    {
+
+        for (int i = 0; i < _cicleCount; i++)
+        {
+            _bowBody.velocity = _forceApplied * i;
+            yield return new WaitForSeconds(_taimerWait);
+        }
+    }
+
     public void Flying()
     {
-        _bowBody.velocity = _forceApplied;
         _bowBody.angularVelocity = _angularForceApplied;
         _stringAnimation.Playing();
+        StartCoroutine(StracherVelocity());
     }
 
     public void GetBody(Bow bow)
     {
         _bowBody = bow.GetComponent<Rigidbody>();
+        StopCoroutine(StracherVelocity());
         Flying();
-    }
-
-    private IEnumerator Waiter()
-    {
-        yield return new WaitForSeconds(0.2f);
-        _spawner.Spawn();
     }
 }
